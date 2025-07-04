@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile Card Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #000;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #f8f9fa;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .navbar-logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #ff6600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #e65c00;
+}
+
+
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+  
+
+    .hamburger {
+      display: none;
+      font-size: 26px;
+      background: none;
+      border: none;
+      color: #000;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #000;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff6600;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 220px;
+        background: #f8f9fa;
+        padding: 20px;
+        display: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+    }
+ 
+
+
+ .hero-section {
+      background-color: #fdd3a1;
+      color: white;
+      text-align: center;
+      padding: 12px 20px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-section h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-section p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-section .btn {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: #ff6200;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .hero-section .btn:hover {
+      background-color: #e65c00;
+    }
+
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .card {
+      border-radius: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: none;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-title {
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .header-text {
+      font-weight: 700;
+      font-size: 2rem;
+      text-align: center;
+      margin: 60px 0 40px;
+      color: #343a40;
+    }
+
+    .badge-role {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 0.75rem;
+    }
+
+    .btn-profile {
+      font-size: 0.9rem;
+      border-radius: 50px;
+    }
+
+    .card-body {
+      position: relative;
+      padding-top: 1rem;
+    }
+
+    .footer {
+        }/* Footer styling */
+    .social-icons a {
+      color: #ffffff;
+      margin-right: 10px;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #0d6efd;
+    }
+
+    footer ul li {
+      margin-bottom: 8px;
+    }
+
+  </style>
+</head>
+<body>
+<header>
+    <nav class="navbar">
+     <a href="C:/Users/ajay8/OneDrive/Desktop/website/index.html" class="navbar-logo">MAKERWORKS</a>
+      <button class="hamburger">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/aboutus.html">About</a></li>
+        <li><a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/Learn1.html">Learn</a></li>
+        <li><a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/Makers1.html">Makers</a></li>
+        <li><a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/projects.html">Projects</a></li>
+        <li><a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/ourblog.html">Our Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<section class="hero-section">
+    <h1>Innovate. Build . Inspire</h1>
+    <p>Join the MakerWorks movement and shape the future with your ideas.</p>
+    <button class="btn">Discover Our Story</button>
+  </section>
+
+  <div class="container">
+
+    <!-- Mentors -->
+    <h2 class="header-text">Mentors</h2>
+    <div class="row g-4 justify-content-center">
+      <!-- Mentor Cards -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card text-center shadow-sm p-2">
+          <span class="badge bg-primary badge-role">Mentor</span>
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" class="profile-img mx-auto mt-4" alt="Emily Jones">
+          <div class="card-body">
+            <h5 class="card-title">Emily Jones</h5>
+            <p class="card-text text-muted">Medical Researcher</p>
+            <a href="#" class="btn btn-outline-primary btn-profile">View Profile</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card text-center shadow-sm p-2">
+          <span class="badge bg-primary badge-role">Mentor</span>
+          <img src="https://randomuser.me/api/portraits/men/43.jpg" class="profile-img mx-auto mt-4" alt="Arjun Singh">
+          <div class="card-body">
+            <h5 class="card-title">Arjun Singh</h5>
+            <p class="card-text text-muted">Software Engineer</p>
+            <a href="#" class="btn btn-outline-primary btn-profile">View Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Beginner Students -->
+    <h2 class="header-text">Beginner Level Students</h2>
+    <div class="row g-4 justify-content-center">
+      <!-- Repeat card structure for each student -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card text-center shadow-sm p-2">
+          <span class="badge bg-success badge-role">Beginner</span>
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="profile-img mx-auto mt-4" alt="Dani Martinez">
+          <div class="card-body">
+            <h5 class="card-title">Dani Martinez</h5>
+            <p class="card-text text-muted">Photographer</p>
+            <a href="#" class="btn btn-outline-success btn-profile">View Profile</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more beginners as needed... -->
+    </div>
+
+    <!-- Intermediate -->
+    <h2 class="header-text">Intermediate Level Students</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="card text-center shadow-sm p-2">
+          <span class="badge bg-warning text-dark badge-role">Intermediate</span>
+          <img src="https://randomuser.me/api/portraits/women/12.jpg" class="profile-img mx-auto mt-4" alt="Brigitte Schwartz">
+          <div class="card-body">
+            <h5 class="card-title">Brigitte Schwartz</h5>
+            <p class="card-text text-muted">Marketing Manager</p>
+            <a href="#" class="btn btn-outline-warning btn-profile">View Profile</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio Program -->
+    <div class="container py-5">
+      <h2 class="header-text">Portfolio Building Program</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card text-center shadow-sm p-2">
+            <span class="badge bg-info text-dark badge-role">Participant</span>
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" class="profile-img mx-auto mt-4" alt="Sameer Joshi">
+            <div class="card-body">
+              <h5 class="card-title">Sameer Joshi</h5>
+              <p class="card-text text-muted">Web Developer</p>
+              <a href="#" class="btn btn-outline-info btn-profile">View Portfolio</a>
+            </div>
+          </div>
+        </div>
+        <!-- Add more participant cards... -->
+      </div>
+    </div>
+
+  </div>
+
+    <!-- Footer Section -->
+<footer class="pt-5" style="background-color: #fff3e0;">
+  <div class="container">
+    <div class="card shadow-lg rounded-4 p-4 border-0" style="background-color: #ffe5b4;">
+      <div class="row">
+
+        <!-- Brand Info -->
+        <div class="col-md-4 mb-4">
+          <h5 class="mt-3">Join The Maker Movement</h5>
+          <p class="text-dark">Innovation from scratch!</p>
+          <div class="social-icons">
+            <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-dark text-decoration-none">About Us</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Learn</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Projects</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Citizen Science</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Makerspace/Cafe</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Blog</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Press & Media</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-4 mb-4">
+          <h5>Get In Touch</h5>
+          <p class="text-dark mb-1">Email: themumbaicodinglab@gmail.com</p>
+          <p class="text-dark mb-1">Phone: +91 9493989713</p>
+          <p class="text-dark">Address: A-wing, Express Zone, Malad East, Mumbai, Maharashtra, India</p>
+        </div>
+
+      </div>
+
+      <div class="text-center border-top pt-3 mt-3">
+        <p class="mb-0 text-dark">© 2023 MakerWorks. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+   const navToggle = document.querySelector('.hamburger');
+const navLinks = document.querySelector('nav ul'); // safer selector
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
+  </script>
+</body>
+</html>

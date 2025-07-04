@@ -1,0 +1,496 @@
+<!-- Updated HTML remains structurally similar, but with improvements to styles and layout -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MakerWorks</title>
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #000;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #f8f9fa;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .navbar-logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #ff6600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #e65c00;
+}
+
+
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+  
+
+    .hamburger {
+      display: none;
+      font-size: 26px;
+      background: none;
+      border: none;
+      color: #000;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #000;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff6600;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 220px;
+        background: #f8f9fa;
+        padding: 20px;
+        display: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+    }
+ 
+    .hero {
+      position: relative;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top right, rgba(0,0,0,0.6), rgba(255,102,0,0.2));
+      z-index: 1;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      transform: translateY(-50%);
+      color: white;
+      z-index: 2;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px;
+      gap: 40px;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+    }
+
+    .about-text h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      color: #444;
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+
+    .about-text .btn {
+      background: #ff6600;
+      color: #fff;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .about-text .btn:hover {
+      background: #e25700;
+    }
+
+    .about-video iframe {
+      width: 100%;
+      max-width: 500px;
+      height: 315px;
+      border-radius: 12px;
+    }
+
+    .distinction-section {
+      background:  #000;
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .distinctions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .distinction-item {
+      flex: 1 1 250px;
+      max-width: 300px;
+    }
+
+    .distinction-item i {
+      font-size: 48px;
+      margin-bottom: 15px;
+      color: #ffcc00;
+    }
+
+    .achievements {
+      background: #f1f1f1;
+      padding: 4rem 1rem;
+    }
+
+    .blog-card {
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .blog-card:hover {
+      transform: scale(1.03);
+    }
+
+    /* Footer styling */
+    .social-icons a {
+      color: #ffffff;
+      margin-right: 10px;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #0d6efd;
+    }
+
+    footer ul li {
+      margin-bottom: 8px;
+    }
+.card-img-top {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+ <header>
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">
+      <!-- Use text or image -->
+      <!-- <span>MAKERWORKS</span> -->
+      <img src="logo.png" alt="MakerWorks Logo" style="height: 40px;">
+    </a>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show')">&#9776;</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="aboutus.html">About</a></li>
+      <li><a href="learn1.html">Learn</a></li>
+      <li><a href="Makers1.html">Makers</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="ourblog.html">Our Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="C:\Users\ajay8\Downloads\PXL_20241012_110753081.MP.jpg" alt="Hero Image">
+    <div class="hero-text">
+      <h1>Innovate. Build. Inspire.</h1>
+      <p>Welcome to MakerWorks — where creators shape the future.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <h2>Ideas grow stronger when you put them into action.</h2>
+      <p> We as Makers first depend on how to make things in a innovative way not to just build and show it to others <strong>#innovateBuildinspire™</strong></p>
+      <a href="#" class="btn">Learn Maker Skills</a>
+    </div>
+    <div class="about-video">
+      <iframe src="https://www.youtube.com/embed/Pj_J6MQFCZE?rel=0" title="MakerWorks"></iframe>
+    </div>
+  </section>
+
+  <section class="distinction-section">
+  <h2 class="mb-5">What Makes Maker Works Different</h2>
+  <div class="distinctions">
+    <div class="distinction-item">
+      <i class="fas fa-rocket"></i>
+      <h4>Empowered Learners</h4>
+      <p>We guide learners to discover their potential through curiosity, confidence, and a growth mindset.</p>
+    </div>
+    <div class="distinction-item">
+      <i class="fas fa-star"></i>
+      <h4>Driven by Excellence</h4>
+      <p>We hold high standards, fostering deep, accountable learning that goes beyond the surface.</p>
+    </div>
+    <div class="distinction-item">
+      <i class="fas fa-tools"></i>
+      <h4>Built Through Doing</h4>
+      <p>From concept to creation, we believe in making. Real-world projects are at the heart of every lesson.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Achievements -->
+<section class="achievements text-center py-5 position-relative bg-light" id="achievements">
+  <div class="container">
+    <!-- Decorative Badge -->
+    <div class="mb-4">
+      <span class="badge bg-warning text-dark fs-6 px-4 py-2 rounded-pill shadow-sm">🏆 Mekathlon Highlights</span>
+    </div>
+
+    <h2 class="mb-4 fw-bold">Maker Works Shines at Mekathlon 2024–2025!</h2>
+
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-10">
+        <p class="lead">Mekathlon isn’t just a competition — it’s a celebration of innovation, teamwork, and engineering spirit. Maker Works participated with full force, and our young makers truly delivered.</p>
+        <p class="mb-3">Two of our teams took home top honors in the Racer Robo category:</p>
+        <ul class="list-unstyled fs-5">
+          <li>🥈 <strong>1<sup>st</sup> Runner-Up – Racer Robo Innovator</strong></li>
+          <li>🥉 <strong>2<sup>nd</sup> Runner-Up – Racer Robo Developer</strong></li>
+        </ul>
+      </div>
+    </div>
+
+   <!-- Images -->
+<div class="row justify-content-center mb-5">
+  <div class="col-md-5 d-flex flex-column align-items-center">
+    <img src="C:\Users\ajay8\Downloads\trophies.jpeg" alt="Mekathlon trophies" class="img-fluid rounded shadow-sm border border-3 border-warning" style="max-width: 320px;" />
+    <p class="mt-2 text-muted text-center">Winning Trophies – Mekathlon 2024–25</p>
+  </div>
+  <div class="col-md-5 d-flex flex-column align-items-center">
+    <img src="C:\Users\ajay8\Downloads\trophies.jpeg" alt="Maker Works student teams" class="img-fluid rounded shadow-sm border border-3 border-primary" style="max-width: 320px;" />
+    <p class="mt-2 text-muted text-center">Team Maker Works – Proud Innovators</p>
+  </div>
+</div>
+
+
+    <!-- Closing Message -->
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <p class="fs-5">From prototyping to problem-solving, our students gave their all. We are proud of their journey — that's the <strong>Maker Works</strong> spirit!</p>
+        <a href="#" class="btn btn-outline-primary mt-3 px-4 py-2">🎉 See the Full Journey</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Decorative Shapes (Optional SVG background) -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="pointer-events: none; z-index: -1; opacity: 0.05;">
+    <img src="images/decorative-gears.svg" alt="Decorative background" class="w-100 h-100 object-fit-cover" />
+  </div>
+</section>
+
+
+
+ <!-- Blog Highlights Section -->
+<section class="py-5" style="background-color: #fffbe6;">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Latest Maker Blogs</h2>
+    <p class="text-center text-muted mb-5">Arduino, Raspberry Pi, and DIY Innovations</p>
+    <div class="row g-4">
+
+      <!-- Blog Card 1 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 border-0 rounded-4">
+          <img src="C:\Users\ajay8\Downloads\blink an led.jpg" class="card-img-top rounded-top-4" alt="Blink LED">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Blink an LED with Arduino</h5>
+            <p class="card-text">Start your Arduino journey by making an LED blink—the simplest way to learn coding and circuits.</p>
+            <a href="blogs.html#led" class="btn btn-sm btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Card 2 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 border-0 rounded-4">
+          <img src="C:\Users\ajay8\Downloads\IoT-based-Home-Automation-using-Blynk-App-and-Raspberry-Pi.jpg" class="card-img-top rounded-top-4" alt="Pi Home Automation">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Home Automation with Raspberry Pi</h5>
+            <p class="card-text">Control your home from anywhere! Learn how to use Pi with sensors and apps to automate everything.</p>
+            <a href="blogs.html#automation" class="btn btn-sm btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Card 3 -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100 border-0 rounded-4">
+          <img src="C:\Users\ajay8\Downloads\top sensors.jpg" class="card-img-top rounded-top-4" alt="Top Sensors for Arduino">
+          <div class="card-body">
+            <h5 class="card-title fw-semibold">Top 5 Sensors for Arduino & Pi</h5>
+            <p class="card-text">Explore must-have sensors for IoT projects, including PIR, DHT11, IR and how to use them.</p>
+            <a href="blogs.html#sensors" class="btn btn-sm btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer Section -->
+<footer class="pt-5" style="background-color: #fff3e0;">
+  <div class="container">
+    <div class="card shadow-lg rounded-4 p-4 border-0" style="background-color: #ffe5b4;">
+      <div class="row">
+
+        <!-- Brand Info -->
+        <div class="col-md-4 mb-4">
+          <h5 class="mt-3">Join The Maker Movement</h5>
+          <p class="text-dark">Innovation from scratch!</p>
+          <div class="social-icons">
+            <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-dark text-decoration-none">About Us</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Learn</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Projects</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Citizen Science</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Makerspace/Cafe</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Blog</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Press & Media</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-4 mb-4">
+          <h5>Get In Touch</h5>
+          <p class="text-dark mb-1">Email: themumbaicodinglab@gmail.com</p>
+          <p class="text-dark mb-1">Phone: +91 9493989713</p>
+          <p class="text-dark">Address: A-wing, Express Zone, Malad East, Mumbai, Maharashtra, India</p>
+        </div>
+
+      </div>
+
+      <div class="text-center border-top pt-3 mt-3">
+        <p class="mb-0 text-dark">© 2023 MakerWorks. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const navToggle = document.querySelector('.hamburger');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+
+    function showBlog(blogId) {
+      const modal = new bootstrap.Modal(document.getElementById('blogModal'));
+      document.getElementById('blogModalLabel').innerText = "Blog " + blogId;
+      document.getElementById('blogContent').innerHTML = "<p>Full blog content for " + blogId + " goes here.</p>";
+      modal.show();
+    }
+  </script>
+</body>
+</html>

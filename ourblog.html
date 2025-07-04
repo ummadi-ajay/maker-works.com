@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MakerWorks Blogs - Arduino & Raspberry Pi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #fffdf7;
+      font-family: 'Segoe UI', sans-serif;
+    }
+     header {
+      background-color: #f8f9fa;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .navbar-logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #ff6600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: #e65c00;
+}
+
+
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+  
+
+    .hamburger {
+      display: none;
+      font-size: 26px;
+      background: none;
+      border: none;
+      color: #000;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #000;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff6600;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 220px;
+        background: #f8f9fa;
+        padding: 20px;
+        display: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+    }
+ 
+
+    .hero {
+      background-color: #ffefd5;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-weight: 700;
+      font-size: 2.8rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    .blog-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    .blog-card img {
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      object-fit: cover;
+      height: 180px;
+      width: 100%;
+    }
+    footer {
+      background-color: #fff3e0;
+    }
+    footer a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+ <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+     <a href="#" class="navbar-logo">MAKERWORKS</a>
+      <button class="hamburger">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/aboutus.html">About</a></li>
+        <li><a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/Learn1.html">Learn</a></li>
+        <li><a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/Makers1.html">Makers</a></li>
+        <li><a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/projects.html">Projects</a></li>
+        <li><a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/ourblog.html">Our Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+<!-- Hero Section -->
+<div class="hero">
+  <div class="container">
+    <h1>Arduino & Raspberry Pi Blogs</h1>
+    <p>Explore beginner tutorials, automation projects, IoT hacks and more.</p>
+  </div>
+</div>
+
+<!-- Blog Section -->
+<div class="container py-5">
+  <div class="row g-4">
+    
+    <!-- Arduino Blog 1 -->
+    <div class="col-md-4">
+      <div class="blog-card">
+        <img src="C:\Users\ajay8\Downloads\blink an led.jpg" alt="Blink LED">
+        <div class="p-3">
+          <h5>Arduino Blink LED Tutorial</h5>
+          <p>Learn the classic “Hello World” of Arduino — making an LED blink.</p>
+          <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arduino Blog 2 -->
+    <div class="col-md-4">
+      <div class="blog-card">
+        <img src="C:\Users\ajay8\Downloads\controlling motors with aurdino.jpg" alt="Motor Control">
+        <div class="p-3">
+          <h5>Controlling Motors with Arduino</h5>
+          <p>From DC to Servo motors, this guide helps you spin them all using Arduino.</p>
+          <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arduino Blog 3 -->
+    <div class="col-md-4">
+      <div class="blog-card">
+        <img src="C:\Users\ajay8\Downloads\16x2 LCD Display.jpg" alt="LCD Display">
+        <div class="p-3">
+          <h5>Interface 16x2 LCD with Arduino</h5>
+          <p>Display any message or sensor data using LCDs and I2C modules.</p>
+          <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Raspberry Pi Blog 1 -->
+    <div class="col-md-4">
+      <div class="blog-card">
+        <img src="C:\Users\ajay8\Downloads\rasperry pi.png" alt="Pi Setup">
+        <div class="p-3">
+          <h5>Getting Started with Raspberry Pi</h5>
+          <p>Install OS, setup Wi-Fi and explore the terminal for the first time.</p>
+          <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Raspberry Pi Blog 2 -->
+    <div class="col-md-4">
+      <div class="blog-card">
+        <img src="C:\Users\ajay8\Downloads\pi with camera.jpg" alt="Pi Camera Module">
+        <div class="p-3">
+          <h5>Using Camera with Pi</h5>
+          <p>Connect the Pi Camera module and capture photos or stream live video.</p>
+          <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Raspberry Pi Blog 3 -->
+    <div class="col-md-4">
+      <div class="blog-card">
+        <img src="C:\Users\ajay8\Downloads\IoT-based-Home-Automation-using-Blynk-App-and-Raspberry-Pi.jpg" alt="IoT with Pi">
+        <div class="p-3">
+          <h5>IoT Automation with Raspberry Pi</h5>
+          <p>Build IoT systems with Node-RED, sensors, and web-based controls.</p>
+          <a href="#" class="btn btn-sm btn-outline-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="pt-5" style="background-color: #fff3e0;">
+  <div class="container">
+    <div class="card shadow-lg rounded-4 p-4 border-0" style="background-color: #ffe5b4;">
+      <div class="row">
+
+        <!-- Brand Info -->
+        <div class="col-md-4 mb-4">
+          <h5 class="mt-3">Join The Maker Movement</h5>
+          <p class="text-dark">Innovation from scratch!</p>
+          <div class="social-icons">
+            <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-dark text-decoration-none">About Us</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Learn</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Projects</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Citizen Science</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Makerspace/Cafe</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Privacy Policy</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Blog</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Press & Media</a></li>
+            <li><a href="#" class="text-dark text-decoration-none">Terms & Conditions</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-4 mb-4">
+          <h5>Get In Touch</h5>
+          <p class="text-dark mb-1">Email: themumbaicodinglab@gmail.com</p>
+          <p class="text-dark mb-1">Phone: +91 9493989713</p>
+          <p class="text-dark">Address: A-wing, Express Zone, Malad East, Mumbai, Maharashtra, India</p>
+        </div>
+
+      </div>
+
+      <div class="text-center border-top pt-3 mt-3">
+        <p class="mb-0 text-dark">© 2023 MakerWorks. All Rights Reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MicroPython Robotics Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+    .blog-header {
+      background: linear-gradient(120deg, #1e3c72, #2a5298);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      border-radius: 0 0 30px 30px;
+      animation: fadeInDown 1s ease-out;
+    }
+    .blog-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: white;
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    h2, h3 {
+      color: #212529;
+      margin-top: 2rem;
+      font-weight: 600;
+    }
+    .blog-meta {
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+    pre {
+      background-color: #f1f1f1;
+      padding: 1rem;
+      position: relative;
+      border-left: 5px solid #0d6efd;
+      overflow-x: auto;
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.8rem;
+    }
+    .blog-image {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      transition: transform 0.4s ease;
+    }
+    .blog-image:hover {
+      transform: scale(1.03);
+    }
+    footer {
+      margin-top: 4rem;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<header class="blog-header" data-aos="zoom-in">
+  <h1>Using MicroPython to Control Robotics Projects</h1>
+  <p class="blog-meta">By Vinay • August 12, 2024 • 7 min read</p>
+</header>
+
+<main class="blog-container">
+
+  <p data-aos="fade-up">MicroPython is a powerful yet lightweight implementation of Python designed for microcontrollers. In this blog, we explore how MicroPython helps build and control robotics projects easily using devices like the BBC micro.</p>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/MicroPython.png/800px-MicroPython.png"
+       alt="MicroPython Logo" class="blog-image" data-aos="fade-right">
+
+  <h2 data-aos="fade-left">Why MicroPython for Robotics?</h2>
+  <ul data-aos="fade-up">
+    <li><strong>Ease of Use:</strong> Python's clean syntax helps avoid errors and speeds up development.</li>
+    <li><strong>Wide Hardware Support:</strong> Works with BBC micro, ESP8266, Raspberry Pi Pico, and more.</li>
+    <li><strong>Rich Libraries:</strong> Includes support for I2C, SPI, PWM—crucial for robotics control.</li>
+  </ul>
+
+  <h2 data-aos="zoom-in-up">Getting Started with the BBC micro</h2>
+  <img src="https://cdn.sanity.io/images/0vv8moc6/diy/4bb15b97f7be6e4029abfe88a6cd0f55b93d4741-2000x1125.jpg"
+       alt="BBC micro:bit example" class="blog-image" data-aos="fade-left">
+  <ul data-aos="fade-up">
+    <li><strong>Install Mu Editor:</strong> Download from <a href="https://codewith.mu/" target="_blank">codewith.mu</a></li>
+    <li><strong>Connect micro:</strong> Plug in via USB, Mu will detect it</li>
+    <li><strong>Write code:</strong> Select “BBC micro:bit” mode</li>
+  </ul>
+
+  <h3 data-aos="fade-right">Step 2: Control a Robot</h3>
+  <p data-aos="fade-up">Simple MicroPython script for basic forward/backward control with buttons:</p>
+
+  <pre data-aos="zoom-in"><code id="code1">from microbit import *
+
+motor_a_forward = pin0
+motor_a_backward = pin1
+motor_b_forward = pin2
+motor_b_backward = pin8
+
+def move_forward():
+    motor_a_forward.write_digital(1)
+    motor_a_backward.write_digital(0)
+    motor_b_forward.write_digital(1)
+    motor_b_backward.write_digital(0)
+
+def move_backward():
+    motor_a_forward.write_digital(0)
+    motor_a_backward.write_digital(1)
+    motor_b_forward.write_digital(0)
+    motor_b_backward.write_digital(1)
+
+def stop():
+    motor_a_forward.write_digital(0)
+    motor_a_backward.write_digital(0)
+    motor_b_forward.write_digital(0)
+    motor_b_backward.write_digital(0)
+
+while True:
+    if button_a.is_pressed():
+        move_forward()
+    elif button_b.is_pressed():
+        move_backward()
+    else:
+        stop()
+</code><button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyCode('code1')">Copy</button></pre>
+
+  <h2 data-aos="fade-left">Adding Sensors: Obstacle Avoidance</h2>
+  <pre data-aos="zoom-in"><code id="code2">from microbit import *
+import time
+
+trig = pin13
+echo = pin14
+
+def measure_distance():
+    trig.write_digital(1)
+    time.sleep_us(10)
+    trig.write_digital(0)
+    duration = echo.read_digital()
+    distance = duration * 0.0343 / 2
+    return distance
+
+while True:
+    distance = measure_distance()
+    if distance &lt; 10:
+        stop()
+    else:
+        move_forward()
+</code><button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyCode('code2')">Copy</button></pre>
+
+  <h3 data-aos="fade-right">Line Following Robot</h3>
+  <pre data-aos="zoom-in"><code id="code3"># Assuming left_sensor = pin15, right_sensor = pin16
+
+def line_follow():
+    left = pin15.read_digital()
+    right = pin16.read_digital()
+
+    if left == 0 and right == 1:
+        turn_left()
+    elif left == 1 and right == 0:
+        turn_right()
+    else:
+        move_forward()
+
+while True:
+    line_follow()
+</code><button class="btn btn-sm btn-outline-primary copy-btn" onclick="copyCode('code3')">Copy</button></pre>
+
+  <h2 data-aos="fade-up">Advanced Ideas</h2>
+  <ul data-aos="fade-up">
+    <li><strong>PID Control:</strong> Precise motor control</li>
+    <li><strong>Wireless Control:</strong> Bluetooth or RF modules</li>
+    <li><strong>Robotic Arms:</strong> Control servos via PWM</li>
+  </ul>
+
+  <h2 data-aos="fade-up">Learn More with The Mumbai Coding Lab</h2>
+  <p data-aos="fade-up">TMCL offers Future Ready courses: Scratch, Python, Microbit, Raspberry Pi, AI/ML, Arduino and more. Located at Express Zone Mall, Malad East (Mumbai) or available online too.</p>
+  <p data-aos="fade-up"><strong>Website:</strong> <a href="https://themumbaicodinglab.in/" target="_blank">https://themumbaicodinglab.in/</a></p>
+
+  <h2 data-aos="fade-up">Conclusion</h2>
+  <p data-aos="fade-up">MicroPython makes robotics simple, powerful, and exciting for all ages. Whether you're building a simple line-following bot or an AI-enabled robot, MicroPython gets the job done.</p>
+
+</main>
+
+<footer class="text-center mb-4 text-muted" data-aos="fade-up">
+  &copy; 2024 Blog by Vinay. All rights reserved.
+</footer>
+
+<!-- JS: Bootstrap + Clipboard + AOS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  function copyCode(id) {
+    const code = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      alert("Code copied to clipboard!");
+    });
+  }
+</script>
+
+</body>
+</html>
