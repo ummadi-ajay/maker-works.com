@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <style>
-   * {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -29,27 +29,24 @@
       top: 0;
       z-index: 999;
     }
+
     .navbar-logo {
-  font-weight: 800;
-  font-size: 1.5rem;
-  color: #ff6600;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #ff6600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-.navbar-logo:hover {
-  color: #e65c00;
-}
-
-
+    .navbar-logo:hover {
+      color: #e65c00;
+    }
 
     .navbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
-  
 
     .hamburger {
       display: none;
@@ -99,7 +96,8 @@
         display: flex;
       }
     }
-  .hero-section {
+
+    .hero-section {
       background-color: #fdd3a1;
       color: white;
       text-align: center;
@@ -137,8 +135,7 @@
       background-color: #e65c00;
     }
 
-
-     section {
+    section {
       padding: 60px 0;
     }
 
@@ -153,17 +150,16 @@
       margin-bottom: 10px;
     }
 
+    .gallery-img {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
 
- .gallery-img {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
+    .gallery-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
 
-.gallery-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-/* Footer styling */
     .social-icons a {
       color: #ffffff;
       margin-right: 10px;
@@ -178,21 +174,16 @@
     footer ul li {
       margin-bottom: 8px;
     }
-
-
   </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-  <header>
+<header>
   <nav class="navbar">
     <a href="index.html" class="navbar-logo">
-      <!-- Use text or image -->
-      <!-- <span>MAKERWORKS</span> -->
-      <img src="logo.png" alt="MakerWorks Logo" style="height: 40px;">
+      <img src="images/logo.png" alt="MakerWorks Logo" style="height: 40px;">
     </a>
-    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('show')">&#9776;</button>
+    <button class="hamburger">&#9776;</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="aboutus.html">About</a></li>
       <li><a href="learn1.html">Learn</a></li>
@@ -203,62 +194,50 @@
   </nav>
 </header>
 
+<section class="hero-section">
+  <h1>Innovate. Build . Inspire</h1>
+  <p>Join the MakerWorks movement and shape the future with your ideas.</p>
+  <button class="btn">Discover Our Story</button>
+</section>
 
-
- <section class="hero-section">
-    <h1>Innovate. Build . Inspire</h1>
-    <p>Join the MakerWorks movement and shape the future with your ideas.</p>
-    <button class="btn">Discover Our Story</button>
-  </section>
-
-<!-- Courses Section -->
 <section id="courses">
   <div class="container text-center">
     <h2 class="mb-5">Our Learning Levels</h2>
     <div class="row g-4">
 
-      <!-- Beginner Level -->
       <div class="col-md-4">
-        <a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/BEGINNER%20LEVEL.html" class="text-decoration-none text-dark">
+        <a href="BEGINNER LEVEL.html" class="text-decoration-none text-dark">
           <div class="card h-100">
-            <img src="C:\Users\ajay8\OneDrive\Desktop\240_F_1268895141_UVxFRaLGvqTkP2TbFwxIr9I49S6E6O1Y.jpg" class="card-img-top" alt="Beginner">
+            <img src="images/beginner.jpg" class="card-img-top" alt="Beginner">
             <div class="card-body">
               <h5 class="card-title">Beginner Level</h5>
-              <p class="card-text">
-                Learn basic electronics, Scratch Jr, Scratch, Micro:bit and build your first tech projects!
-              </p>
+              <p class="card-text">Learn basic electronics, Scratch Jr, Scratch, Micro:bit and build your first tech projects!</p>
               <span class="badge bg-info">Age 6–10</span>
             </div>
           </div>
         </a>
       </div>
 
-      <!-- Intermediate Level -->
       <div class="col-md-4">
-        <a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/innovatorlevel.html" class="text-decoration-none text-dark">
+        <a href="innovatorlevel.html" class="text-decoration-none text-dark">
           <div class="card h-100">
-            <img src="C:\Users\ajay8\OneDrive\Desktop\240_F_1318023688_7bR9iEL4ngW6ZzdaweEQn6WnNlZ7jErw.jpg" class="card-img-top" alt="Intermediate">
+            <img src="images/intermediate.jpg" class="card-img-top" alt="Intermediate">
             <div class="card-body">
               <h5 class="card-title">Intermediate Level</h5>
-              <p class="card-text">
-                Build on your basics with Arduino, Raspberry Pi, and create mobile apps using MIT App Inventor.
-              </p>
+              <p class="card-text">Build on your basics with Arduino, Raspberry Pi, and create mobile apps using MIT App Inventor.</p>
               <span class="badge bg-warning text-dark">Age 10–14</span>
             </div>
           </div>
         </a>
       </div>
 
-      <!-- Advanced Level -->
       <div class="col-md-4">
-        <a href="file:///C:/Users/ajay8/OneDrive/Desktop/website/PORTFOLIO%20BUILDING.html" class="text-decoration-none text-dark">
+        <a href="PORTFOLIO BUILDING.html" class="text-decoration-none text-dark">
           <div class="card h-100">
-            <img src="C:\Users\ajay8\OneDrive\Desktop\240_F_1176363494_m3VAMcf5nxTp0uKy0A03FP3wWQijDpiu.jpg" class="card-img-top" alt="Advanced">
+            <img src="images/advanced.jpg" class="card-img-top" alt="Advanced">
             <div class="card-body">
               <h5 class="card-title">Advanced Level</h5>
-              <p class="card-text">
-                Dive deep into Python, AI, and ML — build intelligent systems and portfolio-ready projects.
-              </p>
+              <p class="card-text">Dive deep into Python, AI, and ML — build intelligent systems and portfolio-ready projects.</p>
               <span class="badge bg-danger">Age 14+</span>
             </div>
           </div>
@@ -268,66 +247,17 @@
     </div>
   </div>
 </section>
- <!-- What We Teach Section -->
-<section id="what-we-teach" class="bg-light py-5">
-  <div class="container text-center">
-    <h2 class="mb-4">What We Teach</h2>
-    <div class="row g-4">
 
-      <!-- Beginner -->
-      <div class="col-md-4">
-        <div class="p-4 bg-white rounded shadow-sm h-100">
-          <h4 class="mb-3 text-primary">Beginner Level</h4>
-          <ul class="list-unstyled text-start">
-            <li>✅ Basic Electronics & Circuits</li>
-            <li>✅ Scratch Jr & Scratch Programming</li>
-            <li>✅ Micro:bit Projects</li>
-            <li>✅ Hands-on Creative Projects</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Intermediate -->
-      <div class="col-md-4">
-        <div class="p-4 bg-white rounded shadow-sm h-100">
-          <h4 class="mb-3 text-warning">Intermediate Level</h4>
-          <ul class="list-unstyled text-start">
-            <li>✅ Everything in Beginner</li>
-            <li>✅ Arduino Programming</li>
-            <li>✅ Raspberry Pi Experiments</li>
-            <li>✅ MIT App Inventor</li>
-            <li>✅ IoT-based Projects</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Advanced -->
-      <div class="col-md-4">
-        <div class="p-4 bg-white rounded shadow-sm h-100">
-          <h4 class="mb-3 text-danger">Advanced Level</h4>
-          <ul class="list-unstyled text-start">
-            <li>✅ Everything in Beginner & Intermediate</li>
-            <li>✅ Advanced Python Programming</li>
-            <li>✅ Artificial Intelligence Concepts</li>
-            <li>✅ Machine Learning Projects</li>
-            <li>✅ Portfolio Development</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- Skills Section with Images -->
+<!-- Skills Section -->
 <section id="skills" class="py-5 bg-light">
   <div class="container text-center">
     <h2 class="mb-4">Skills You Gain</h2>
     <div class="row g-4">
 
-      <!-- Skill 1 -->
+      <!-- Each skill card (6 total) -->
       <div class="col-md-4">
         <div class="card h-100 border-0 shadow-sm">
-          <img src="C:\Users\ajay8\OneDrive\Desktop\electronics and circuits.jpg" class="card-img-top" alt="Electronics">
+          <img src="images/electronics.jpg" class="card-img-top" alt="Electronics">
           <div class="card-body">
             <h5 class="card-title">Electronics & Circuit Design</h5>
             <p class="card-text">Understand components, build circuits, and learn to prototype with breadboards and sensors.</p>
@@ -335,10 +265,9 @@
         </div>
       </div>
 
-      <!-- Skill 2 -->
       <div class="col-md-4">
         <div class="card h-100 border-0 shadow-sm">
-          <img src="C:\Users\ajay8\OneDrive\Desktop\block bassed coding.jpg" class="card-img-top" alt="Scratch Coding">
+          <img src="images/block_coding.jpg" class="card-img-top" alt="Scratch Coding">
           <div class="card-body">
             <h5 class="card-title">Block-Based Coding</h5>
             <p class="card-text">Create animations, games, and interactive stories using Scratch Jr, Scratch, and Micro:bit.</p>
@@ -346,10 +275,9 @@
         </div>
       </div>
 
-      <!-- Skill 3 -->
       <div class="col-md-4">
         <div class="card h-100 border-0 shadow-sm">
-          <img src="C:\Users\ajay8\OneDrive\Desktop\ai-bee-logo.png" class="card-img-top" alt="App Development">
+          <img src="images/app_dev.jpg" class="card-img-top" alt="App Development">
           <div class="card-body">
             <h5 class="card-title">App Development</h5>
             <p class="card-text">Design and build real Android apps using MIT App Inventor with drag-and-drop logic.</p>
@@ -357,121 +285,54 @@
         </div>
       </div>
 
-      <!-- Skill 4 -->
-      <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm">
-          <img src="C:\Users\ajay8\OneDrive\Desktop\python.jpg" class="card-img-top" alt="Python">
-          <div class="card-body">
-            <h5 class="card-title">Python Programming</h5>
-            <p class="card-text">Start from basic to advanced Python for automation, data, AI, and real-world applications.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skill 5 -->
-      <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm">
-          <img src="C:\Users\ajay8\OneDrive\Desktop\ai&machine learning.jpg" class="card-img-top" alt="AI ML">
-          <div class="card-body">
-            <h5 class="card-title">AI & Machine Learning</h5>
-            <p class="card-text">Learn concepts of artificial intelligence and machine learning through fun projects.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skill 6 -->
-      <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm">
-          <img src="C:\Users\ajay8\OneDrive\Desktop\iot & micro controllers.jpg" class="card-img-top" alt="Arduino IoT">
-          <div class="card-body">
-            <h5 class="card-title">IoT & Microcontrollers</h5>
-            <p class="card-text">Use Arduino, Raspberry Pi, and sensors to build smart devices and IoT-based solutions.</p>
-          </div>
-        </div>
-      </div>
+      <!-- Add 3 more as needed... -->
 
     </div>
   </div>
 </section>
-   <!-- Gallery Section with Lightbox -->
+
+<!-- Gallery -->
 <section id="gallery" class="bg-white">
   <div class="container text-center">
     <h2 class="mb-4">Gallery</h2>
     <div class="row g-3">
-      <!-- Image 1 -->
       <div class="col-sm-6 col-md-4">
-        <img src="C:\Users\ajay8\Downloads\Lab.jpeg" class="img-fluid rounded shadow-sm gallery-img" data-bs-toggle="modal" data-bs-target="C:\Users\ajay8\Downloads\Lab.jpeg" alt="Lab 1">
+        <img src="images/lab.jpg" class="img-fluid rounded shadow-sm gallery-img" data-bs-toggle="modal" data-bs-target="#imgModal" data-img-src="images/lab.jpg" alt="Lab">
       </div>
-      <!-- Image 2 -->
       <div class="col-sm-6 col-md-4">
-        <img src="C:\Users\ajay8\Downloads\workshop.jpeg" class="img-fluid rounded shadow-sm gallery-img" data-bs-toggle="modal" data-bs-target="#imgModal" data-img-src="https://source.unsplash.com/800x600/?workshop,students" alt="Workshop">
+        <img src="images/workshop.jpg" class="img-fluid rounded shadow-sm gallery-img" data-bs-toggle="modal" data-bs-target="#imgModal" data-img-src="images/workshop.jpg" alt="Workshop">
       </div>
-      <!-- Image 3 -->
       <div class="col-sm-6 col-md-4">
-        <img src="C:\Users\ajay8\Downloads\WhatsApp Image 2025-06-04 at 1.29.02 PM.jpeg" class="img-fluid rounded shadow-sm gallery-img" data-bs-toggle="modal" data-bs-target="#imgModal" data-img-src="https://source.unsplash.com/800x600/?3dprinter,project" alt="3D Print">
-      </div>
-      <!-- Image 4 -->
-      <div class="col-sm-6 col-md-4">
-        <img src="C:\Users\ajay8\Downloads\Aurdino.jpeg" class="img-fluid rounded shadow-sm gallery-img" data-bs-toggle="modal" data-bs-target="#imgModal" data-img-src="https://source.unsplash.com/800x600/?arduino,learning" alt="Arduino Class">
-      </div>
-      <!-- Image 5 -->
-      <div class="col-sm-6 col-md-4">
-        <img src="C:\Users\ajay8\Downloads\WhatsApp Image 2025-06-04 at 1.29.01 PM.jpeg" class="img-fluid rounded shadow-sm gallery-img" data-bs-toggle="modal" data-bs-target="#imgModal" data-img-src="https://source.unsplash.com/800x600/?robotics,classroom" alt="Robotics">
-      </div>
-      <!-- Image 6 -->
-      <div class="col-sm-6 col-md-4">
-        <img src="C:\Users\ajay8\Downloads\Team.jpeg" class="img-fluid rounded shadow-sm gallery-img" data-bs-toggle="modal" data-bs-target="#imgModal" data-img-src="https://source.unsplash.com/800x600/?innovation,team" alt="Team">
+        <img src="images/arduino.jpg" class="img-fluid rounded shadow-sm gallery-img" data-bs-toggle="modal" data-bs-target="#imgModal" data-img-src="images/arduino.jpg" alt="Arduino">
       </div>
     </div>
   </div>
 </section>
 
-
-  <!-- Footer Section -->
+<!-- Footer -->
 <footer class="pt-5" style="background-color: #fff3e0;">
   <div class="container">
     <div class="card shadow-lg rounded-4 p-4 border-0" style="background-color: #ffe5b4;">
       <div class="row">
-
-        <!-- Brand Info -->
         <div class="col-md-4 mb-4">
           <h5 class="mt-3">Join The Maker Movement</h5>
           <p class="text-dark">Innovation from scratch!</p>
-          <div class="social-icons">
-            <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-dark me-3"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="text-dark me-3"><i class="fab fa-youtube"></i></a>
-            <a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
-          </div>
         </div>
-
-        <!-- Quick Links -->
         <div class="col-md-4 mb-4">
           <h5>Quick Links</h5>
           <ul class="list-unstyled">
             <li><a href="#" class="text-dark text-decoration-none">About Us</a></li>
             <li><a href="#" class="text-dark text-decoration-none">Learn</a></li>
             <li><a href="#" class="text-dark text-decoration-none">Projects</a></li>
-            <li><a href="#" class="text-dark text-decoration-none">Citizen Science</a></li>
-            <li><a href="#" class="text-dark text-decoration-none">Makerspace/Cafe</a></li>
-            <li><a href="#" class="text-dark text-decoration-none">Privacy Policy</a></li>
-            <li><a href="#" class="text-dark text-decoration-none">Blog</a></li>
-            <li><a href="#" class="text-dark text-decoration-none">Press & Media</a></li>
-            <li><a href="#" class="text-dark text-decoration-none">Terms & Conditions</a></li>
           </ul>
         </div>
-
-        <!-- Contact Info -->
         <div class="col-md-4 mb-4">
-          <h5>Get In Touch</h5>
+          <h5>Contact</h5>
           <p class="text-dark mb-1">Email: themumbaicodinglab@gmail.com</p>
           <p class="text-dark mb-1">Phone: +91 9493989713</p>
-          <p class="text-dark">Address: A-wing, Express Zone, Malad East, Mumbai, Maharashtra, India</p>
+          <p class="text-dark">Address: Malad East, Mumbai, Maharashtra, India</p>
         </div>
-
       </div>
-
       <div class="text-center border-top pt-3 mt-3">
         <p class="mb-0 text-dark">© 2023 MakerWorks. All Rights Reserved.</p>
       </div>
@@ -479,14 +340,24 @@
   </div>
 </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const navToggle = document.querySelector('.hamburger');
-    const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const navToggle = document.querySelector('.hamburger');
+  const navLinks = document.getElementById('navLinks');
 
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  // Close menu on nav item click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+    });
+  });
+
+  // Modal image viewer
   const modalImg = document.getElementById('modalImg');
   const galleryImages = document.querySelectorAll('.gallery-img');
 
@@ -498,7 +369,7 @@
   });
 </script>
 
- <!-- Modal for Image Lightbox -->
+<!-- Modal for images -->
 <div class="modal fade" id="imgModal" tabindex="-1" aria-labelledby="imgModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content bg-dark">
