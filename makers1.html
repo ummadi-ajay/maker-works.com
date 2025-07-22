@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>MakerWorks - Our Team</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Inlined styles that are specific to this page or override styles.css */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #000;
+            scroll-behavior: smooth;
+        }
+
+        /* Consistent header and navbar styles */
+        header {
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: #0d6efd; /* Bootstrap primary blue, consistent with project.html's .text-primary */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #0a58ca; /* Darker shade of primary blue on hover */
+        }
+
+        .navbar-nav .nav-link {
+            color: #000;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ff6600; /* Original hover color */
+        }
+
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                background: #f8f9fa;
+                padding: 10px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                margin-top: 10px;
+            }
+        }
+
+        section {
+            padding: 100px 20px 60px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff6600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        /* Team Member Profile Card Styles */
+        .profile-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            padding: 20px; /* Reduced padding */
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%; /* Ensures cards in a row have equal height */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align content to the top */
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px); /* Reduced lift on hover */
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12); /* Slightly reduced shadow */
+        }
+
+        .profile-card .profile-img {
+            width: 120px; /* Reduced image size */
+            height: 120px; /* Reduced image size */
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px; /* Reduced margin */
+            border: 3px solid #ff6600; /* Reduced border thickness */
+            transition: border-color 0.3s ease;
+        }
+
+        .profile-card:hover .profile-img {
+            border-color: #0d6efd; /* Change border color on hover */
+        }
+
+        .profile-card h5 {
+            font-size: 1.4rem; /* Reduced font size */
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 3px; /* Reduced margin */
+        }
+
+        .profile-card p.title {
+            font-size: 0.95rem; /* Reduced font size */
+            color: #666;
+            margin-bottom: 0; /* Removed bottom margin */
+        }
+
+        /* Tag styles */
+        .profile-card .tags {
+            margin-top: 10px; /* Space above tags */
+            margin-bottom: 15px; /* Space below tags */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px; /* Space between tags */
+        }
+
+        .profile-card .tags .tag {
+            background-color: #e9ecef; /* Light grey background for tags */
+            color: #495057; /* Darker grey text for tags */
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Footer styling */
+        .social-icons a {
+            color: #000;
+            margin-right: 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #0d6efd;
+        }
+        footer ul li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top px-3">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="index.html">MakerWorks</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+                    <ul class="navbar-nav gap-3 fw-medium">
+                        <li class="nav-item"><a class="nav-link" href="aboutus.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="learn.html">Learn</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Makers1.html">Makers</a></li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Programs</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="BEGINNER LEVEL.html">Beginner Level</a></li>
+                                <li><a class="dropdown-item" href="innovatorlevel.html">Intermediate Level</a></li>
+                                <li><a class="dropdown-item" href="PORTFOLIOBUILDINGLEVEL.html">Advanced Level</a></li>
+                            </ul>
+                        </li>
+
+                       
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#competitions" role="button" data-bs-toggle="dropdown" aria-expanded="false">Competitions</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://wroindia.org/">WRO</a></li>
+                                <li><a class="dropdown-item" href="https://www.vexrobotics.com/iq/competition/viqc-current-game">VEX IQ</a></li>
+                            </ul>
+                        </li>
+
+                         <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ourblog.html">Blog</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <main>
+        <section id="search-section" class="py-4 bg-light">
+            <div class="container">
+                <div class="input-group">
+                    <input type="text" id="profileSearch" class="form-control" placeholder="Search for a team member or student...">
+                    <button class="btn btn-primary" id="searchButton">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="mentors" class="py-5 bg-light team-section">
+            <div class="container">
+                <h2 class="section-title">Our Dedicated Mentors</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="profile-card">
+                            <img src="https://via.placeholder.com/150/A020F0/FFFFFF?text=M1" alt="Mentor Profile Picture" class="profile-img">
+                            <h5>Vinay Ummadi</h5>
+                            <p class="title text-muted">AI ,Machine Learning and python Mentor</p>
+                            <div class="tags">
+                                <span class="tag">AI</span>
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Education</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="profile-card">
+                            <img src="https://via.placeholder.com/150/FFD700/000000?text=M2" alt="Mentor Profile Picture" class="profile-img">
+                            <h5>Abhay Waghmare</h5>
+                            <p class="title text-muted">IoT & Embedded Systems Mentor</p>
+                            <div class="tags">
+                                <span class="tag">Desingning</span>
+                                <span class="tag">creative </span>
+                                <span class="tag">Hardware</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="profile-card">
+                            <img src="https://via.placeholder.com/150/00CED1/FFFFFF?text=M3" alt="Mentor Profile Picture" class="profile-img">
+                            <h5>Vamsi Polane</h5>
+                            <p class="title text-muted">Creative Computing Mentor</p>
+                            <div class="tags">
+                                <span class="tag"> Coding</span>
+                                <span class="tag">Game Dev</span>
+                                <span class="tag">Digital Art</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="beginners-showcase" class="py-5 team-section">
+            <div class="container">
+                <h2 class="section-title"> TinkerStudents</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="profile-card">
+                            <img src="https://via.placeholder.com/150/90EE90/000000?text=B1" alt="Beginner Project" class="profile-img">
+                            <h5>Vihaan</h5>
+                            <p class="title text-muted">Smart Home Automation</p>
+                            <div class="tags">
+                                <span class="tag">Micro Bit</span>
+                                <span class="tag">3d designing</span>
+                                <span class="tag">IoT</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="profile-card">
+                            <img src="https://via.placeholder.com/150/ADD8E6/000000?text=B2" alt="Beginner Project" class="profile-img">
+                            <h5>Sara Khan</h5>
+                            <p class="title text-muted">Interactive Story Game</p>
+                            <div class="tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Game Development</span>
+                                <span class="tag">Text-based</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="intermediate-creators" class="py-5 bg-light team-section">
+            <div class="container">
+                <h2 class="section-title">Intermediate Level Students</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="profile-card">
+                            <img src="https://via.placeholder.com/150/FFA07A/000000?text=I1" alt="Intermediate Project" class="profile-img">
+                            <h5>Rohan Desai</h5>
+                            <p class="title text-muted">AI-Powered Chatbot</p>
+                            <div class="tags">
+                                <span class="tag">AI</span>
+                                <span class="tag">NLP</span>
+                                <span class="tag">TensorFlow</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="profile-card">
+                            <img src="https://via.placeholder.com/150/87CEEB/000000?text=I2" alt="Intermediate Project" class="profile-img">
+                            <h5>Aisha Gupta</h5>
+                            <p class="title text-muted">Robotic Arm with Computer Vision</p>
+                            <div class="tags">
+                                <span class="tag">Robotics</span>
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">OpenCV</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio-builders" class="py-5 team-section">
+            <div class="container">
+                <h2 class="section-title">Portfolio Builders</h2>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div class="col">
+                        <div class="profile-card">
+                            <img src="https://via.placeholder.com/150/DA70D6/000000?text=P1" alt="Portfolio Project" class="profile-img">
+                            <h5>Vijay Kumar</h5>
+                            <p class="title text-muted">Full-Stack Web Application</p>
+                            <div class="tags">
+                                <span class="tag">Web Development</span>
+                                <span class="tag">MERN Stack</span>
+                                <span class="tag">E-commerce</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="profile-card">
+                            <img src="https://via.placeholder.com/150/FF6347/FFFFFF?text=P2" alt="Portfolio Project" class="profile-img">
+                            <h5>Deepa Reddy</h5>
+                            <p class="title text-muted">AR/VR Educational Experience</p>
+                            <div class="tags">
+                                <span class="tag">AR/VR</span>
+                                <span class="tag">3D Modeling</span>
+                                <span class="tag">Unity</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="profile-card">
+                            <img src="https://via.placeholder.com/150/20B2AA/FFFFFF?text=P3" alt="Portfolio Project" class="profile-img">
+                            <h5>Aniket Sharma</h5>
+                            <p class="title text-muted">Data Science Dashboard</p>
+                            <div class="tags">
+                                <span class="tag">Data Science</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="profile-card">
+                            <img src="https://via.placeholder.com/150/6A5ACD/FFFFFF?text=P4" alt="Portfolio Project" class="profile-img">
+                            <h5>Priya Mehta</h5>
+                            <p class="title text-muted">Mobile App Development</p>
+                            <div class="tags">
+                                <span class="tag">Mobile Dev</span>
+                                <span class="tag">Flutter</span>
+                                <span class="tag">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pt-5" style="background-color: #fff3e0;">
+        <div class="container">
+            <div class="card shadow-lg rounded-4 p-4 border-0" style="background-color: #ffe5b4;">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <h5 class="mt-3">Join The Maker Movement</h5>
+                        <p class="text-dark">Innovation from scratch!</p>
+                        <div class="social-icons">
+                            <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-dark me-3"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-dark me-3"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="aboutus.html" class="text-dark text-decoration-none">About Us</a></li>
+                            <li><a href="learn.html" class="text-dark text-decoration-none">Learn</a></li>
+                            <li><a href="projects.html" class="text-dark text-decoration-none">Projects</a></li>
+                            <li><a href="#" class="text-dark text-decoration-none">Citizen Science</a></li>
+                            <li><a href="#" class="text-dark text-decoration-none">Makerspace/Cafe</a></li>
+                            <li><a href="#" class="text-dark text-decoration-none">Privacy Policy</a></li>
+                            <li><a href="ourblog.html" class="text-dark text-decoration-none">Blog</a></li>
+                            <li><a href="#" class="text-dark text-decoration-none">Press & Media</a></li>
+                            <li><a href="#" class="text-dark text-decoration-none">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>Get In Touch</h5>
+                        <p class="text-dark mb-1">Email: themumbaicodinglab@gmail.com</p>
+                        <p class="text-dark mb-1">Phone: +91 9493989713</p>
+                        <p class="text-dark">Address: A-wing, Express Zone, Malad East, Mumbai, Maharashtra, India</p>
+                    </div>
+                </div>
+                <div class="text-center border-top pt-3 mt-3">
+                    <p class="mb-0 text-dark">© 2023 MakerWorks. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Search functionality for profile cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('profileSearch');
+            // Get all sections that contain profile cards
+            const teamSections = document.querySelectorAll('.team-section'); 
+
+            // Initialize data attributes for each profile card on load
+            document.querySelectorAll('.profile-card').forEach(card => {
+                card.setAttribute('data-name', card.querySelector('h5').innerText.toLowerCase());
+                card.setAttribute('data-title', card.querySelector('p.title').innerText.toLowerCase());
+                
+                const tagsElement = card.querySelector('.tags');
+                if (tagsElement) {
+                    const tagText = Array.from(tagsElement.querySelectorAll('.tag')).map(tag => tag.innerText.toLowerCase()).join(' ');
+                    card.setAttribute('data-tags', tagText);
+                }
+            });
+
+            function filterProfiles() {
+                const searchTerm = searchInput.value.toLowerCase().trim(); // Trim whitespace
+
+                teamSections.forEach(section => {
+                    let sectionHasVisibleCards = false;
+                    const columnsInRow = section.querySelectorAll('.row.g-4 > .col'); // Select direct columns containing cards
+
+                    columnsInRow.forEach(column => {
+                        const card = column.querySelector('.profile-card');
+                        if (card) {
+                            const name = card.getAttribute('data-name');
+                            const title = card.getAttribute('data-title');
+                            const tags = card.getAttribute('data-tags') || '';
+
+                            if (name.includes(searchTerm) || title.includes(searchTerm) || tags.includes(searchTerm)) {
+                                column.style.display = 'block'; // Show the column
+                                sectionHasVisibleCards = true;
+                            } else {
+                                column.style.display = 'none'; // Hide the column
+                            }
+                        }
+                    });
+
+                    // Hide/show the entire section (including its title)
+                    // If no search term, always show the section
+                    if (searchTerm === '' || sectionHasVisibleCards) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+
+            // Attach the filter function to input changes
+            searchInput.addEventListener('keyup', filterProfiles);
+            // Optionally, also attach to a click event on the search button
+            document.getElementById('searchButton').addEventListener('click', filterProfiles);
+
+            // Initial filter call in case of pre-filled input or on page load
+            filterProfiles();
+        });
+    </script>
+</body>
+</html>

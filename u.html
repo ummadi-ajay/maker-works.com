@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakerWorks - [Person's Name] Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles.css"> <style>
+        /* Specific styles for the profile page */
+        .profile-header {
+            background-color: #f8f9fa;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #ff6600; /* MakerWorks brand color */
+            margin-bottom: 20px;
+        }
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff6600;
+        }
+        .profile-title {
+            font-size: 1.5rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        .profile-tags .badge {
+            margin: 5px;
+            padding: 8px 12px;
+            font-size: 0.9rem;
+            background-color: #0d6efd; /* Bootstrap primary blue */
+            color: white;
+        }
+        .profile-section {
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .profile-section:last-child {
+            border-bottom: none;
+        }
+        .profile-section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #343a40;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .skill-item {
+            display: inline-block;
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 8px 15px;
+            border-radius: 20px;
+            margin: 5px;
+        }
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        .project-card .card-body {
+            padding: 20px;
+        }
+        .project-card .card-title {
+            color: #ff6600;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        .contact-info i {
+            margin-right: 10px;
+            color: #ff6600;
+        }
+        .testimonial-card {
+            background-color: #fff3e0; /* Light orange background */
+            border-left: 5px solid #ff6600;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-style: italic;
+        }
+        .testimonial-author {
+            text-align: right;
+            font-weight: 600;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">MakerWorks</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a> </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#about-us">About Us</a> </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#programs">Programs</a> </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../w.html">Our Team</a> </li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="profile-header">
+            <div class="container">
+                <img src="https://via.placeholder.com/180" alt="[Person's Name]" class="profile-img">
+                <h1 class="profile-name">[Person's Name]</h1>
+                <p class="profile-title">[Title/Role, e.g., AI & Robotics Expert]</p>
+                <div class="profile-tags">
+                    <span class="badge">[Tag 1]</span>
+                    <span class="badge">[Tag 2]</span>
+                    <span class="badge">[Tag 3]</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-section container" id="about">
+            <h2>About [Person's Name]</h2>
+            <p class="lead text-center">[A compelling biography or about section. You can make this longer with multiple paragraphs.] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </section>
+
+        <section class="profile-section container" id="skills">
+            <h2>Skills</h2>
+            <div class="text-center">
+                <span class="skill-item">Skill 1 (e.g., Python)</span>
+                <span class="skill-item">Skill 2 (e.g., Machine Learning)</span>
+                <span class="skill-item">Skill 3 (e.g., IoT Development)</span>
+                <span class="skill-item">Skill 4 (e.g., Robotics)</span>
+                <span class="skill-item">Skill 5 (e.g., Web Development)</span>
+            </div>
+        </section>
+
+        <section class="profile-section container" id="projects">
+            <h2>Projects</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Title One</h5>
+                            <p class="card-text">A brief description of Project One, highlighting its goals and technologies used.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Title Two</h5>
+                            <p class="card-text">A brief description of Project Two, highlighting its goals and technologies used.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x250" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Title Three</h5>
+                            <p class="card-text">A brief description of Project Three, highlighting its goals and technologies used.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-section container" id="education">
+            <h2>Educational Background</h2>
+            <div class="row">
+                <div class="col-12">
+                    <p><strong>[Degree/Certification]</strong> - [Major/Field of Study]</p>
+                    <p>[University/Institution Name], [City, Country]</p>
+                    <p>[Year of Graduation/Completion]</p>
+                    <hr>
+                    <p><strong>[Another Degree/Certification]</strong> - [Major/Field of Study]</p>
+                    <p>[University/Institution Name], [City, Country]</p>
+                    <p>[Year of Graduation/Completion]</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-section container" id="contact">
+            <h2>Contact Information</h2>
+            <div class="contact-info text-center">
+                <p><i class="fas fa-envelope"></i> <a href="mailto:email@example.com">email@example.com</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn Profile</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/yourprofile" target="_blank">GitHub Profile</a></p>
+                </div>
+        </section>
+
+        <section class="profile-section container" id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <p>"[Person's Name] is an exceptional mentor. Their guidance on our robotics project was invaluable!"</p>
+                        <p class="testimonial-author">- [Name of Testimonial Giver], [Their Title]</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial-card">
+                        <p>"Working with [Person's Name] was a fantastic experience. Their problem-solving skills are top-notch."</p>
+                        <p class="testimonial-author">- [Name of Testimonial Giver], [Their Title]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-light text-dark py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                    <h5 class="text-uppercase mb-3">MakerWorks</h5>
+                    <p>Innovate. Build. Inspire.</p>
+                </div>
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <h5 class="text-uppercase mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-dark text-decoration-none">Home</a></li>
+                        <li><a href="../index.html#about-us" class="text-dark text-decoration-none">About Us</a></li>
+                        <li><a href="../index.html#programs" class="text-dark text-decoration-none">Programs</a></li>
+                        <li><a href="../w.html" class="text-dark text-decoration-none">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-center text-md-end">
+                    <h5 class="text-uppercase mb-3">Contact Info</h5>
+                    <p class="text-dark mb-1">Email: themumbaicodinglab@gmail.com</p>
+                    <p class="text-dark mb-1">Phone: +91 9493989713</p>
+                    <p class="text-dark">Address: A-wing, Express Zone, Malad East, Mumbai, Maharashtra, India</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="text-dark me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-dark me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-dark me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-dark"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center border-top pt-3 mt-3">
+                <p class="mb-0 text-dark">© 2023 MakerWorks. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
