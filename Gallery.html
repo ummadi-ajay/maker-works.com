@@ -525,7 +525,6 @@
             
             let iso;
 
-            // This is the key part. We wait for all images to load before we initialize Isotope.
             function initializeIsotope() {
                 if (galleryGrid && typeof Isotope !== 'undefined') {
                     iso = new Isotope(galleryGrid, {
@@ -549,11 +548,13 @@
                 }
             }
             
+            // This function checks if all images have finished loading.
             function imagesLoaded( container, callback ) {
                 var imgElems = container.querySelectorAll( 'img' );
                 var loadedCount = 0;
                 var imgTotal = imgElems.length;
                 
+                // If there are no images, just run the callback.
                 if (imgTotal === 0) {
                     callback();
                     return;
@@ -566,17 +567,21 @@
                     }
                 }
                 
+                // Attach event listeners to each image.
                 for ( var i = 0; i < imgTotal; i++ ) {
                     var img = imgElems[i];
                     if ( img.complete ) {
+                        // If the image is already loaded, run the load handler immediately.
                         onImageLoad();
                     } else {
+                        // Otherwise, wait for the 'load' or 'error' event.
                         img.addEventListener( 'load', onImageLoad, { once: true } );
                         img.addEventListener( 'error', onImageLoad, { once: true } );
                     }
                 }
             }
 
+            // Call the imagesLoaded helper function, which will then call initializeIsotope.
             imagesLoaded( galleryGrid, initializeIsotope );
         });
     </script>
