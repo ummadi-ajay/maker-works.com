@@ -371,47 +371,47 @@
         <section class="gallery-grid">
             
             <div class="gallery-item" data-category="people" data-aos="zoom-in">
-                <img src="images/Arjun working on Mekathalon robot.jpeg" alt="Arjun working on Mekathalon robot">
+                <img src="images/arjun-working-on-mekathalon-robot.jpeg" alt="Arjun working on Mekathalon robot">
                 <div class="caption">Arjun working on Mekathalon robot</div>
             </div>
 
             <div class="gallery-item" data-category="people" data-aos="zoom-in">
-                <img src="images/pranav working on colour sorter.jpeg" alt="Pranav working on colour sorter">
+                <img src="images/pranav-working-on-colour-sorter.jpeg" alt="Pranav working on colour sorter">
                 <div class="caption">Pranav working on colour sorter</div>
             </div>
 
             <div class="gallery-item" data-category="people" data-aos="zoom-in">
-                <img src="images/Avyaan showing his project.jpeg" alt="Avyaan showing his project">
+                <img src="images/avyaan-showing-his-project.jpeg" alt="Avyaan showing his project">
                 <div class="caption">Avyaan showing his project</div>
             </div>
 
             <div class="gallery-item" data-category="events" data-aos="zoom-in">
-                <img src="images/our wro team.jpeg" alt="Our WRO Team">
+                <img src="images/our-wro-team.jpeg" alt="Our WRO Team">
                 <div class="caption">Our WRO Team</div>
             </div>
 
             <div class="gallery-item" data-category="people" data-aos="zoom-in">
-                <img src="images/kiara working on wro project.jpeg" alt="Kiara working on WRO project">
+                <img src="images/kiara-working-on-wro-project.jpeg" alt="Kiara working on WRO project">
                 <div class="caption">Kiara working on WRO project</div>
             </div>
 
             <div class="gallery-item" data-category="products" data-aos="zoom-in">
-                <img src="images/bhargav showing completed project.jpeg" alt="Bhargav showing completed project">
+                <img src="images/bhargav-showing-completed-project.jpeg" alt="Bhargav showing completed project">
                 <div class="caption">Bhargav showing completed project</div>
             </div>
 
             <div class="gallery-item" data-category="people" data-aos="zoom-in">
-                <img src="images/ivan learning.jpeg" alt="Ivan learning">
+                <img src="images/ivan-learning.jpeg" alt="Ivan learning">
                 <div class="caption">Ivan learning</div>
             </div>
 
             <div class="gallery-item" data-category="people" data-aos="zoom-in">
-                <img src="images/purv learning Micro bit.jpeg" alt="Purv learning Micro:bit">
+                <img src="images/purv-learning-micro-bit.jpeg" alt="Purv learning Micro:bit">
                 <div class="caption">Purv learning Micro:bit</div>
             </div>
 
             <div class="gallery-item" data-category="people" data-aos="zoom-in">
-                <img src="images/Ayukt working on bluetooth control robot.jpeg" alt="Ayukt working on bluetooth control robot">
+                <img src="images/ayukt-working-on-bluetooth-control-robot.jpeg" alt="Ayukt working on bluetooth control robot">
                 <div class="caption">Ayukt working on bluetooth control robot</div>
             </div>
         </section>
@@ -548,13 +548,11 @@
                 }
             }
             
-            // This function checks if all images have finished loading.
             function imagesLoaded( container, callback ) {
                 var imgElems = container.querySelectorAll( 'img' );
                 var loadedCount = 0;
                 var imgTotal = imgElems.length;
                 
-                // If there are no images, just run the callback.
                 if (imgTotal === 0) {
                     callback();
                     return;
@@ -567,21 +565,17 @@
                     }
                 }
                 
-                // Attach event listeners to each image.
                 for ( var i = 0; i < imgTotal; i++ ) {
                     var img = imgElems[i];
                     if ( img.complete ) {
-                        // If the image is already loaded, run the load handler immediately.
                         onImageLoad();
                     } else {
-                        // Otherwise, wait for the 'load' or 'error' event.
                         img.addEventListener( 'load', onImageLoad, { once: true } );
                         img.addEventListener( 'error', onImageLoad, { once: true } );
                     }
                 }
             }
 
-            // Call the imagesLoaded helper function, which will then call initializeIsotope.
             imagesLoaded( galleryGrid, initializeIsotope );
         });
     </script>
